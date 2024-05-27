@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/COMO-Acacio/EKS-k8s-cluster.git  # Must contains the GitHub repo in which the files are stored
-    targetRevision: HEAD
+    targetRevision: master
     path: app                                                   # Subfolder (if applicable) on the GitHub repo
   destination:  
     server: https://kubernetes.default.svc
