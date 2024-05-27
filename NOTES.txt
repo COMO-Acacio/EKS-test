@@ -1,0 +1,19 @@
+1) Credentials issues - fixed with Dennis
+
+    aws eks update-kubeconfig --region region-code --name my-cluster
+
+    aws configure sso (https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html#sso-configure-profile-token-auto-sso)
+
+2) Connect Docker with ECS to upload image
+
+3) Istio deployment - added the ingress policies at the "eks.tf" file, otherwise it was creating issues with the WebHook
+
+4) ArgoCD, it does work in parallel with a Git repository, so when something is changed there, it recognize and updates the final project in the cluster, avoiding the need of "reapply" the project
+
+- Port-forward: kubectl port-forward svc/argocd-server 8080:443 -n argocd
+
+- https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-management/#adding-a-cluster
+
+- https://dev.to/techmaharaj/getting-started-with-argocd-in-under-5-mins-1n76
+
+- https://collabnix.com/deploying-argocd-with-aws-eks/

@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: newapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/COMO-Acacio/EKS-k8s-cluster.git  # Must contains the GitHub repo in which the files are stored
+    targetRevision: HEAD
+    path: app                                                   # Subfolder (if applicable) on the GitHub repo
+  destination:  
+    server: https://kubernetes.default.svc
+    namespace: newapp                                             # This namespace shall be he same as the app namespace, for connection
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true

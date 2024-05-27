@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newapp
+spec:
+  selector:
+    matchLabels:
+      app: newapp
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: newapp
+        sidecar.istio.io/inject: "true"
+    spec:
+      containers:
+      - name: newapp
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+---
+# Service to allow the port-forward
+apiVersion: v1
+kind: Service
+metadata:
+  name: newapp-service
+spec:
+  selector:
+    app: newapp
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  
