@@ -4,9 +4,9 @@
 
 Login at AWS using root credentials
 
-    URL:      https://d-996710794e.awsapps.com/start/#/?tab=accounts
+    URL:      https://**********.awsapps.com/start/#/?tab=accounts
 
-    Account:  devops-development  
+    Account:  devops-development
 
 
 Configure SSO with command (follow the CLI instructions):
