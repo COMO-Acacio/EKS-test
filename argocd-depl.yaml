@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/COMO-Acacio/EKS-k8s-cluster.git  # Must contains the GitHub repo in which the files are stored
+    repoURL: https://github.com/COMO-Acacio/EKS-test.git  # Must contains the GitHub repo in which the files are stored
     targetRevision: master
     path: app                                                   # Subfolder (if applicable) on the GitHub repo
   destination:  
