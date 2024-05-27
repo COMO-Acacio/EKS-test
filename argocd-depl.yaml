@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/COMO-Acacio/EKS-test.git  # Must contains the GitHub repo in which the files are stored
-    targetRevision: master
+    targetRevision: HEAD
     path: app                                                   # Subfolder (if applicable) on the GitHub repo
   destination:  
     server: https://kubernetes.default.svc
