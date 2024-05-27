@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newapp
+  name: newapp-deployment
 spec:
   selector:
     matchLabels:
       app: newapp
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
