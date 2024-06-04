@@ -1,6 +1,6 @@
 locals {
   region = "eu-central-1"
-  name   = "dev-test-cluster"
+  name   = "test-20240604"
   vpc_cidr = "172.0.0.0/16"
   azs      = ["eu-central-1a", "eu-central-1b"]
   public_subnets  = ["172.0.1.0/24", "172.0.2.0/24", "172.0.3.0/24"]
