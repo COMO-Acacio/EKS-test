@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: newapp
-        #sidecar.istio.io/inject: "true"
+        sidecar.istio.io/inject: "true"
     spec:
       containers:
       - name: newapp
