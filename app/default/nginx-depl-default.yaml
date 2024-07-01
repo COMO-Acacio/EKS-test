@@ -27,6 +27,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: newapp-svc-default
+  namespace: test-app
 spec:
   selector:
     app: newapp
