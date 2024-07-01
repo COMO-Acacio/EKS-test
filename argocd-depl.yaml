@@ -3,15 +3,20 @@ kind: Application
 metadata:
   name: newapp-argo-application
   namespace: argocd
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
+  labels: # Testing how the deployment links to the app to be deployed
+    app: newapp
 spec:
   project: default
   source:
     repoURL: https://github.com/COMO-Acacio/EKS-test.git  # Must contains the GitHub repo in which the files are stored
     targetRevision: HEAD
-    path: app                                                   # Subfolder (if applicable) on the GitHub repo
+    path: app/default                                                   # Subfolder (if applicable) on the GitHub repo
   destination:  
-    server: https://kubernetes.default.svc
-    namespace: newapp                                             # This namespace shall be he same as the app namespace, for connection
+    server: https://kubernetes.default.svc # Testing if "in-cluster" works
+    #name: in-cluster
+    #namespace:                                             # This namespace shall be he same as the app namespace, for connection
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
