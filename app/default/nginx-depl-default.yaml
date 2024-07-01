@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newapp-deployment
-  namespace: default
+  name: newapp-depl-default
+  namespace: test-app
 spec:
   selector:
     matchLabels:
@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: newapp-service
+  name: newapp-svc-default
 spec:
   selector:
     app: newapp
