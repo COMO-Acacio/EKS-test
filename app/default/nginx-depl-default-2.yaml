@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example-depl-default2
-  namespace: test-app
+  namespace: test-app-2
 spec:
   selector:
     matchLabels:
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: example-svc-default2
-  namespace: test-app
+  namespace: test-app-2
 spec:
   selector:
     app: example
