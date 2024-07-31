@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-same-ns
+  namespace: test-app-2
+spec:
+  selector:
+    matchLabels:
+      app: example
+  replicas: 2
+
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      containers:
+      - name: example
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+---
+# Service to allow the port-forward
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-same-ns
+  namespace: test-app-2
+spec:
+  selector:
+    app: example
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  
