@@ -6,16 +6,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: example
+      app: example-2
   replicas: 2
 
   template:
     metadata:
       labels:
-        app: example
+        app: example-2
     spec:
       containers:
-      - name: example
+      - name: example-2
         image: nginx:latest
         ports:
         - containerPort: 80
@@ -29,7 +29,7 @@ metadata:
   namespace: test-app-2
 spec:
   selector:
-    app: example
+    app: example-2
   ports:
   - port: 8080
     protocol: TCP
